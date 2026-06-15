@@ -4,200 +4,318 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI4M Labs | ATLAS</title>
-  <meta name="description" content="AI4M Labs builds ATLAS, an AI visibility intelligence system for destinations and brands." />
+  <meta name="description" content="ATLAS by AI4M Labs — AI visibility intelligence for destinations and brands." />
+
   <style>
+    * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      background: #0b1020;
-      color: #ffffff;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
       line-height: 1.6;
     }
     .container {
-      max-width: 1080px;
+      max-width: 1120px;
       margin: auto;
-      padding: 40px 24px;
+      padding: 0 24px;
     }
     header {
+      padding: 24px 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 28px 0;
     }
-    .logo {
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      font-size: 18px;
-    }
+    .logo img { height: 46px; }
     nav a {
-      color: #cbd5e1;
       text-decoration: none;
+      color: #334155;
       margin-left: 24px;
       font-size: 14px;
+      font-weight: 600;
     }
     .hero {
-      padding: 90px 0 80px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 56px;
+      align-items: center;
+      padding: 80px 0 90px;
     }
-    .tag {
-      color: #60a5fa;
-      font-weight: 600;
+    .eyebrow {
+      color: #2563eb;
       text-transform: uppercase;
+      letter-spacing: .14em;
       font-size: 13px;
-      letter-spacing: 0.12em;
+      font-weight: 800;
     }
     h1 {
-      font-size: 56px;
+      font-size: 52px;
       line-height: 1.05;
       margin: 18px 0;
-      max-width: 850px;
+      letter-spacing: -0.04em;
     }
-    .subtitle {
-      font-size: 20px;
-      color: #cbd5e1;
-      max-width: 720px;
+    h2 {
+      font-size: 34px;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin: 0 0 16px;
+    }
+    h3 { margin-top: 0; }
+    .lead {
+      font-size: 19px;
+      color: #475569;
+      max-width: 620px;
     }
     .button {
       display: inline-block;
-      margin-top: 32px;
-      background: #ffffff;
-      color: #0b1020;
-      padding: 14px 24px;
-      border-radius: 999px;
+      margin-top: 28px;
+      padding: 14px 22px;
+      background: #0f172a;
+      color: white;
       text-decoration: none;
-      font-weight: 600;
+      border-radius: 999px;
+      font-weight: 700;
     }
-    .section {
-      padding: 70px 0;
-      border-top: 1px solid rgba(255,255,255,0.1);
+    .visual {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 28px;
+      padding: 26px;
+      box-shadow: 0 24px 80px rgba(15, 23, 42, 0.08);
     }
-    h2 {
-      font-size: 36px;
-      margin-bottom: 16px;
+    .bar {
+      margin: 18px 0;
     }
-    .grid {
+    .bar span {
+      display: block;
+      font-size: 13px;
+      color: #475569;
+      margin-bottom: 7px;
+    }
+    .track {
+      height: 12px;
+      background: #e2e8f0;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .fill {
+      height: 100%;
+      background: #2563eb;
+      border-radius: 999px;
+    }
+    .metrics {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-      margin-top: 32px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 22px;
+    }
+    .metric {
+      background: #f1f5f9;
+      padding: 16px;
+      border-radius: 18px;
+    }
+    .metric strong {
+      display: block;
+      font-size: 24px;
+    }
+    section {
+      padding: 72px 0;
+      border-top: 1px solid #e2e8f0;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 34px;
     }
     .card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 18px;
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 22px;
       padding: 24px;
     }
-    .card h3 {
-      margin-top: 0;
-      color: #93c5fd;
+    .icon {
+      width: 42px;
+      height: 42px;
+      background: #eff6ff;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+      color: #2563eb;
+      font-weight: 900;
     }
-    .muted {
-      color: #cbd5e1;
+    .muted { color: #64748b; }
+    .split {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .mini-chart {
+      background: #0f172a;
+      color: white;
+      border-radius: 28px;
+      padding: 28px;
+    }
+    .line {
+      height: 160px;
+      background:
+        linear-gradient(135deg, transparent 20%, rgba(96,165,250,.45) 21%, transparent 22%),
+        linear-gradient(45deg, transparent 40%, rgba(96,165,250,.7) 41%, transparent 42%),
+        linear-gradient(160deg, transparent 55%, rgba(96,165,250,.55) 56%, transparent 57%);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 18px;
+      margin-top: 18px;
     }
     form {
-      max-width: 620px;
+      max-width: 640px;
       margin-top: 28px;
     }
     input, textarea {
       width: 100%;
-      padding: 14px;
+      padding: 15px;
       margin-bottom: 14px;
-      border-radius: 10px;
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(255,255,255,0.08);
-      color: white;
+      border-radius: 12px;
+      border: 1px solid #cbd5e1;
       font-size: 15px;
-      box-sizing: border-box;
+      font-family: inherit;
     }
-    textarea {
-      min-height: 140px;
-    }
+    textarea { min-height: 140px; }
     button {
-      background: #60a5fa;
-      color: #06111f;
-      border: none;
+      background: #2563eb;
+      color: white;
+      border: 0;
       padding: 14px 22px;
       border-radius: 999px;
-      font-weight: 700;
+      font-weight: 800;
       cursor: pointer;
     }
     footer {
       padding: 36px 0;
-      color: #94a3b8;
+      color: #64748b;
       font-size: 14px;
-      border-top: 1px solid rgba(255,255,255,0.1);
+      border-top: 1px solid #e2e8f0;
     }
-    @media (max-width: 700px) {
+    @media (max-width: 850px) {
+      .hero, .split { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: 1fr 1fr; }
       h1 { font-size: 40px; }
-      header { align-items: flex-start; gap: 16px; }
-      nav a { margin-left: 12px; }
+    }
+    @media (max-width: 560px) {
+      .cards, .metrics { grid-template-columns: 1fr; }
+      nav { display: none; }
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <header>
-      <div class="logo">AI4M LABS</div>
+      <a class="logo" href="#"><img src="ai4m.png" alt="AI4M Labs logo"></a>
       <nav>
         <a href="#atlas">ATLAS</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
 
-    <section class="hero">
-      <div class="tag">AI Visibility Intelligence</div>
-      <h1>Understand how AI systems see, rank and recommend your brand.</h1>
-      <p class="subtitle">
-        AI4M Labs builds intelligence tools for the new search landscape. Our flagship product, ATLAS, helps destinations and brands measure their visibility across AI assistants, LLM-generated recommendations and prompt-led discovery journeys.
-      </p>
-      <a class="button" href="#contact">Request a pilot</a>
-    </section>
-
-    <section class="section" id="atlas">
-      <div class="tag">Flagship Product</div>
-      <h2>ATLAS</h2>
-      <p class="subtitle">
-        ATLAS is an AI Tracking & LLM Analysis System designed to reveal how destinations, brands and experiences appear across AI-generated recommendations.
-      </p>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Measure AI visibility</h3>
-          <p class="muted">Track whether your brand appears in AI-generated answers across strategic prompt categories.</p>
+    <main>
+      <section class="hero">
+        <div>
+          <div class="eyebrow">AI Visibility Intelligence</div>
+          <h1>Know how AI recommends you.</h1>
+          <p class="lead">
+            ATLAS helps destinations and brands understand how they appear across AI assistants, prompt-led search and LLM-generated recommendations.
+          </p>
+          <a class="button" href="#contact">Request a pilot</a>
         </div>
-        <div class="card">
-          <h3>Benchmark competitors</h3>
-          <p class="muted">Understand who is being recommended, in what context and against which alternatives.</p>
-        </div>
-        <div class="card">
-          <h3>Identify gaps</h3>
-          <p class="muted">Find weak spots in positioning, content and discoverability across AI-led search journeys.</p>
-        </div>
-        <div class="card">
-          <h3>Turn prompts into insight</h3>
-          <p class="muted">Transform thousands of LLM outputs into structured, decision-ready market intelligence.</p>
-        </div>
-      </div>
-    </section>
 
-    <section class="section">
-      <h2>Built for the next era of discovery</h2>
-      <p class="subtitle">
-        As consumers increasingly ask AI tools where to travel, what to buy and which brands to trust, visibility inside AI-generated answers becomes a new strategic channel. ATLAS helps organizations monitor, analyze and improve that visibility.
-      </p>
-    </section>
+        <div class="visual">
+          <h3>AI Visibility Snapshot</h3>
+          <p class="muted">Illustrative ATLAS dashboard view</p>
 
-    <section class="section" id="contact">
-      <div class="tag">Contact</div>
-      <h2>Request a pilot</h2>
-      <p class="muted">Interested in ATLAS? Send us a note and we’ll get back to you.</p>
+          <div class="bar">
+            <span>Top-3 recommendation visibility</span>
+            <div class="track"><div class="fill" style="width: 42%"></div></div>
+          </div>
+          <div class="bar">
+            <span>Competitor share of mentions</span>
+            <div class="track"><div class="fill" style="width: 68%"></div></div>
+          </div>
+          <div class="bar">
+            <span>Prompt coverage strength</span>
+            <div class="track"><div class="fill" style="width: 57%"></div></div>
+          </div>
 
-      <form action="https://formspree.io/f/xnjywdjp" method="POST">
-        <input type="text" name="name" placeholder="Your name" required />
-        <input type="email" name="email" placeholder="Your email" required />
-        <textarea name="message" placeholder="Tell us about your organization or use case" required></textarea>
-        <button type="submit">Send message</button>
-      </form>
-    </section>
+          <div class="metrics">
+            <div class="metric"><strong>1,500+</strong><span>prompts</span></div>
+            <div class="metric"><strong>12</strong><span>themes</span></div>
+            <div class="metric"><strong>24/7</strong><span>tracking</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="atlas">
+        <div class="eyebrow">ATLAS</div>
+        <h2>AI Tracking & LLM Analysis System</h2>
+        <p class="lead">
+          ATLAS turns AI-generated answers into structured market intelligence, showing where your brand appears, where it is missing, and who is winning the recommendation layer.
+        </p>
+
+        <div class="cards">
+          <div class="card">
+            <div class="icon">01</div>
+            <h3>Measure visibility</h3>
+            <p class="muted">Track how often your brand appears across strategic AI prompts.</p>
+          </div>
+          <div class="card">
+            <div class="icon">02</div>
+            <h3>Benchmark rivals</h3>
+            <p class="muted">See which competitors are recommended and in what contexts.</p>
+          </div>
+          <div class="card">
+            <div class="icon">03</div>
+            <h3>Find gaps</h3>
+            <p class="muted">Identify weak spots in positioning, content and AI discoverability.</p>
+          </div>
+          <div class="card">
+            <div class="icon">04</div>
+            <h3>Act on insight</h3>
+            <p class="muted">Translate LLM outputs into clear strategic actions.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="split">
+          <div>
+            <div class="eyebrow">Why it matters</div>
+            <h2>Search is becoming conversational.</h2>
+            <p class="lead">
+              Consumers increasingly ask AI systems where to travel, what to buy and which brands to trust. ATLAS helps organizations understand and improve their position in this new discovery layer.
+            </p>
+          </div>
+          <div class="mini-chart">
+            <h3>From prompts to strategy</h3>
+            <p class="muted">Monitor patterns, rank competitors and detect visibility shifts over time.</p>
+            <div class="line"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="eyebrow">Contact</div>
+        <h2>Request a pilot</h2>
+        <p class="lead">Interested in ATLAS? Send a note and we’ll get back to you.</p>
+
+        <form action="https://formspree.io/f/xnjywdjp" method="POST">
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="email" name="email" placeholder="Your email" required>
+          <textarea name="message" placeholder="Tell us about your organization or use case" required></textarea>
+          <button type="submit">Send message</button>
+        </form>
+      </section>
+    </main>
 
     <footer>
       © 2026 AI4M Labs. All rights reserved.
