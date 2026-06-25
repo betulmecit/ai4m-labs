@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI4M Labs | ATLAS</title>
-  <meta name="description" content="ATLAS by AI4M Labs — AI visibility intelligence for destinations and brands." />
+  <title>AI4M Labs | ARIF</title>
+  <meta name="description" content="ARIF by AI4M Labs — AI Relationship Intelligence Framework for brands, destinations and markets." />
 
   <style>
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
@@ -15,18 +16,22 @@
       color: #0f172a;
       line-height: 1.6;
     }
+
     .container {
       max-width: 1120px;
       margin: auto;
       padding: 0 24px;
     }
+
     header {
       padding: 24px 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
+
     .logo img { height: 46px; }
+
     nav a {
       text-decoration: none;
       color: #334155;
@@ -34,6 +39,7 @@
       font-size: 14px;
       font-weight: 600;
     }
+
     .hero {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
@@ -41,6 +47,7 @@
       align-items: center;
       padding: 80px 0 90px;
     }
+
     .eyebrow {
       color: #2563eb;
       text-transform: uppercase;
@@ -48,24 +55,29 @@
       font-size: 13px;
       font-weight: 800;
     }
+
     h1 {
-      font-size: 52px;
+      font-size: 54px;
       line-height: 1.05;
       margin: 18px 0;
       letter-spacing: -0.04em;
     }
+
     h2 {
       font-size: 34px;
       line-height: 1.15;
       letter-spacing: -0.03em;
       margin: 0 0 16px;
     }
+
     h3 { margin-top: 0; }
+
     .lead {
       font-size: 19px;
       color: #475569;
-      max-width: 620px;
+      max-width: 650px;
     }
+
     .button {
       display: inline-block;
       margin-top: 28px;
@@ -76,6 +88,7 @@
       border-radius: 999px;
       font-weight: 700;
     }
+
     .visual {
       background: white;
       border: 1px solid #e2e8f0;
@@ -83,57 +96,60 @@
       padding: 26px;
       box-shadow: 0 24px 80px rgba(15, 23, 42, 0.08);
     }
-    .bar {
-      margin: 18px 0;
+
+    .node-map {
+      height: 280px;
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at 50% 50%, #2563eb 0 7px, transparent 8px),
+        radial-gradient(circle at 20% 30%, #94a3b8 0 6px, transparent 7px),
+        radial-gradient(circle at 78% 28%, #94a3b8 0 6px, transparent 7px),
+        radial-gradient(circle at 25% 75%, #94a3b8 0 6px, transparent 7px),
+        radial-gradient(circle at 80% 72%, #94a3b8 0 6px, transparent 7px),
+        linear-gradient(45deg, transparent 48%, rgba(37,99,235,.25) 49%, rgba(37,99,235,.25) 51%, transparent 52%),
+        linear-gradient(135deg, transparent 48%, rgba(37,99,235,.2) 49%, rgba(37,99,235,.2) 51%, transparent 52%);
+      background-color: #f8fafc;
+      border: 1px solid #e2e8f0;
+      margin-top: 18px;
     }
-    .bar span {
-      display: block;
-      font-size: 13px;
-      color: #475569;
-      margin-bottom: 7px;
-    }
-    .track {
-      height: 12px;
-      background: #e2e8f0;
-      border-radius: 999px;
-      overflow: hidden;
-    }
-    .fill {
-      height: 100%;
-      background: #2563eb;
-      border-radius: 999px;
-    }
+
     .metrics {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 14px;
       margin-top: 22px;
     }
+
     .metric {
       background: #f1f5f9;
       padding: 16px;
       border-radius: 18px;
     }
+
     .metric strong {
       display: block;
       font-size: 24px;
     }
+
     section {
       padding: 72px 0;
       border-top: 1px solid #e2e8f0;
     }
+
     .cards {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 18px;
       margin-top: 34px;
     }
+
     .card {
       background: white;
       border: 1px solid #e2e8f0;
       border-radius: 22px;
       padding: 24px;
     }
+
     .icon {
       width: 42px;
       height: 42px;
@@ -145,33 +161,37 @@
       color: #2563eb;
       font-weight: 900;
     }
+
     .muted { color: #64748b; }
+
     .split {
       display: grid;
       grid-template-columns: 0.9fr 1.1fr;
       gap: 48px;
       align-items: center;
     }
-    .mini-chart {
+
+    .dark-box {
       background: #0f172a;
       color: white;
       border-radius: 28px;
-      padding: 28px;
+      padding: 30px;
     }
-    .line {
-      height: 160px;
-      background:
-        linear-gradient(135deg, transparent 20%, rgba(96,165,250,.45) 21%, transparent 22%),
-        linear-gradient(45deg, transparent 40%, rgba(96,165,250,.7) 41%, transparent 42%),
-        linear-gradient(160deg, transparent 55%, rgba(96,165,250,.55) 56%, transparent 57%);
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 18px;
-      margin-top: 18px;
+
+    .pill {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      margin: 6px 6px 0 0;
+      font-size: 14px;
     }
+
     form {
       max-width: 640px;
       margin-top: 28px;
     }
+
     input, textarea {
       width: 100%;
       padding: 15px;
@@ -181,7 +201,9 @@
       font-size: 15px;
       font-family: inherit;
     }
+
     textarea { min-height: 140px; }
+
     button {
       background: #2563eb;
       color: white;
@@ -191,17 +213,20 @@
       font-weight: 800;
       cursor: pointer;
     }
+
     footer {
       padding: 36px 0;
       color: #64748b;
       font-size: 14px;
       border-top: 1px solid #e2e8f0;
     }
+
     @media (max-width: 850px) {
       .hero, .split { grid-template-columns: 1fr; }
       .cards { grid-template-columns: 1fr 1fr; }
       h1 { font-size: 40px; }
     }
+
     @media (max-width: 560px) {
       .cards, .metrics { grid-template-columns: 1fr; }
       nav { display: none; }
@@ -212,9 +237,12 @@
 <body>
   <div class="container">
     <header>
-      <a class="logo" href="#"><img src="ai4m.png" alt="AI4M Labs logo"></a>
+      <a class="logo" href="#">
+        <img src="ai4m.png" alt="AI4M Labs logo">
+      </a>
       <nav>
-        <a href="#atlas">ATLAS</a>
+        <a href="#arif">ARIF</a>
+        <a href="#method">Method</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -222,103 +250,152 @@
     <main>
       <section class="hero">
         <div>
-          <div class="eyebrow">AI Visibility Intelligence</div>
-          <h1>Know how AI recommends you.</h1>
+          <div class="eyebrow">AI Relationship Intelligence</div>
+          <h1>Understand how AI connects your brand to the world.</h1>
           <p class="lead">
-            ATLAS helps destinations and brands understand how they appear across AI assistants, prompt-led search and LLM-generated recommendations.
+            ARIF is AI4M Labs’ core product for measuring how destinations, brands and institutions are represented, recommended and related inside AI-generated answers.
           </p>
           <a class="button" href="#contact">Request a pilot</a>
         </div>
 
         <div class="visual">
-          <h3>AI Visibility Snapshot</h3>
-          <p class="muted">Illustrative ATLAS dashboard view</p>
+          <h3>ARIF Relationship Map</h3>
+          <p class="muted">
+            Illustrative view of how AI associates a brand with themes, competitors, places and consumer intents.
+          </p>
 
-          <div class="bar">
-            <span>Top-3 recommendation visibility</span>
-            <div class="track"><div class="fill" style="width: 42%"></div></div>
-          </div>
-          <div class="bar">
-            <span>Competitor share of mentions</span>
-            <div class="track"><div class="fill" style="width: 68%"></div></div>
-          </div>
-          <div class="bar">
-            <span>Prompt coverage strength</span>
-            <div class="track"><div class="fill" style="width: 57%"></div></div>
-          </div>
+          <div class="node-map"></div>
 
           <div class="metrics">
-            <div class="metric"><strong>1,500+</strong><span>prompts</span></div>
-            <div class="metric"><strong>12</strong><span>themes</span></div>
-            <div class="metric"><strong>24/7</strong><span>tracking</span></div>
+            <div class="metric"><strong>1,500+</strong><span>strategic prompts</span></div>
+            <div class="metric"><strong>12+</strong><span>relationship themes</span></div>
+            <div class="metric"><strong>24/7</strong><span>AI visibility tracking</span></div>
           </div>
         </div>
       </section>
 
-      <section id="atlas">
-        <div class="eyebrow">ATLAS</div>
-        <h2>AI Tracking & LLM Analysis System</h2>
+      <section id="arif">
+        <div class="eyebrow">ARIF</div>
+        <h2>AI Relationship Intelligence Framework</h2>
         <p class="lead">
-          ATLAS turns AI-generated answers into structured market intelligence, showing where your brand appears, where it is missing, and who is winning the recommendation layer.
+          ARIF goes beyond simple prompt tracking. It studies the relationship between a brand and the concepts AI systems associate with it — such as luxury, beaches, culture, safety, innovation, shopping, family travel or business leadership.
         </p>
 
         <div class="cards">
           <div class="card">
             <div class="icon">01</div>
-            <h3>Measure visibility</h3>
-            <p class="muted">Track how often your brand appears across strategic AI prompts.</p>
+            <h3>Measure AI visibility</h3>
+            <p class="muted">
+              Track where your brand appears, how often it is recommended and whether it ranks in high-value AI answers.
+            </p>
           </div>
+
           <div class="card">
             <div class="icon">02</div>
-            <h3>Benchmark rivals</h3>
-            <p class="muted">See which competitors are recommended and in what contexts.</p>
+            <h3>Map relationships</h3>
+            <p class="muted">
+              Understand which attributes, themes and consumer needs AI connects to your brand.
+            </p>
           </div>
+
           <div class="card">
             <div class="icon">03</div>
-            <h3>Find gaps</h3>
-            <p class="muted">Identify weak spots in positioning, content and AI discoverability.</p>
+            <h3>Benchmark competitors</h3>
+            <p class="muted">
+              Identify who is winning specific AI recommendation spaces and why.
+            </p>
           </div>
+
           <div class="card">
             <div class="icon">04</div>
-            <h3>Act on insight</h3>
-            <p class="muted">Translate LLM outputs into clear strategic actions.</p>
+            <h3>Guide strategy</h3>
+            <p class="muted">
+              Translate AI perception gaps into content, positioning, partnership and marketing actions.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="method">
+        <div class="split">
+          <div>
+            <div class="eyebrow">Method</div>
+            <h2>From prompts to relationship intelligence.</h2>
+            <p class="lead">
+              ARIF uses structured prompt sets, LLM answer analysis, semantic clustering and competitor benchmarking to reveal how AI systems construct meaning around your brand.
+            </p>
+          </div>
+
+          <div class="dark-box">
+            <h3>What ARIF analyzes</h3>
+            <span class="pill">Brand visibility</span>
+            <span class="pill">Top-3 recommendation share</span>
+            <span class="pill">Semantic associations</span>
+            <span class="pill">Competitor overlap</span>
+            <span class="pill">Category ownership</span>
+            <span class="pill">Prompt intent gaps</span>
+            <span class="pill">Positioning strength</span>
+            <span class="pill">AI perception shifts</span>
           </div>
         </div>
       </section>
 
       <section>
-        <div class="split">
-          <div>
-            <div class="eyebrow">Why it matters</div>
-            <h2>Search is becoming conversational.</h2>
-            <p class="lead">
-              Consumers increasingly ask AI systems where to travel, what to buy and which brands to trust. ATLAS helps organizations understand and improve their position in this new discovery layer.
+        <div class="eyebrow">Use cases</div>
+        <h2>Built for destinations, brands and market leaders.</h2>
+        <p class="lead">
+          ARIF helps organizations understand whether AI systems associate them with the strategic themes they want to own — and where competitors are taking visibility.
+        </p>
+
+        <div class="cards">
+          <div class="card">
+            <h3>Destinations</h3>
+            <p class="muted">
+              See whether AI recommends your destination for luxury, beaches, culture, shopping, business travel or family holidays.
             </p>
           </div>
-          <div class="mini-chart">
-            <h3>From prompts to strategy</h3>
-            <p class="muted">Monitor patterns, rank competitors and detect visibility shifts over time.</p>
-            <div class="line"></div>
+
+          <div class="card">
+            <h3>Brands</h3>
+            <p class="muted">
+              Understand how AI compares your brand against competitors across consumer decisions.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Tourism boards</h3>
+            <p class="muted">
+              Track destination perception, category ownership and AI-led demand signals.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Leadership teams</h3>
+            <p class="muted">
+              Turn AI visibility data into strategic decisions, campaigns and investment priorities.
+            </p>
           </div>
         </div>
       </section>
 
       <section id="contact">
         <div class="eyebrow">Contact</div>
-        <h2>Request a pilot</h2>
-        <p class="lead">Interested in ATLAS? Send a note and we’ll get back to you.</p>
+        <h2>Request an ARIF pilot</h2>
+        <p class="lead">
+          Interested in understanding how AI sees your brand, destination or market? Send us a note.
+        </p>
 
         <form action="https://formspree.io/f/xnjywdjp" method="POST">
           <input type="text" name="name" placeholder="Your name" required>
           <input type="email" name="email" placeholder="Your email" required>
-          <textarea name="message" placeholder="Tell us about your organization or use case" required></textarea>
+          <textarea name="message" placeholder="Tell us about your organization, market or use case" required></textarea>
           <button type="submit">Send message</button>
         </form>
       </section>
     </main>
 
     <footer>
-      © 2026 AI4M Labs. All rights reserved.
+      © 2026 AI4M Labs. ARIF — AI Relationship Intelligence Framework.
     </footer>
   </div>
 </body>
