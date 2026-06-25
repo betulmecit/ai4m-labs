@@ -1,13 +1,19 @@
 <!DOCTYPE html>
-
 <html lang="en">
-  <head>
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>AI4M Labs | ARIF</title>
   <meta name="description" content="ARIF by AI4M Labs — AI Relationship Intelligence Framework for brands, destinations and markets." />
+  <meta property="og:title" content="AI4M Labs | ARIF" />
+  <meta property="og:description" content="Understand how AI connects your brand to the world." />
+  <meta property="og:type" content="website" />
+
   <style>
     * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -24,28 +30,39 @@
     }
 
     header {
-      padding: 24px 0;
+      padding: 28px 0 10px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    .logo img { height: 46px; }
+    .logo img {
+      height: 184px;
+      width: auto;
+      display: block;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
 
     nav a {
       text-decoration: none;
       color: #334155;
-      margin-left: 24px;
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 15px;
+      font-weight: 700;
     }
+
+    nav a:hover { color: #2563eb; }
 
     .hero {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
       gap: 56px;
       align-items: center;
-      padding: 80px 0 90px;
+      padding: 42px 0 90px;
     }
 
     .eyebrow {
@@ -57,16 +74,16 @@
     }
 
     h1 {
-      font-size: 54px;
-      line-height: 1.05;
+      font-size: 56px;
+      line-height: 1.04;
       margin: 18px 0;
-      letter-spacing: -0.04em;
+      letter-spacing: -0.045em;
     }
 
     h2 {
-      font-size: 34px;
-      line-height: 1.15;
-      letter-spacing: -0.03em;
+      font-size: 36px;
+      line-height: 1.12;
+      letter-spacing: -0.035em;
       margin: 0 0 16px;
     }
 
@@ -75,19 +92,22 @@
     .lead {
       font-size: 19px;
       color: #475569;
-      max-width: 650px;
+      max-width: 680px;
     }
 
     .button {
       display: inline-block;
       margin-top: 28px;
-      padding: 14px 22px;
+      padding: 14px 24px;
       background: #0f172a;
       color: white;
       text-decoration: none;
       border-radius: 999px;
-      font-weight: 700;
+      font-weight: 800;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.16);
     }
+
+    .button:hover { background: #1e293b; }
 
     .visual {
       background: white;
@@ -148,6 +168,7 @@
       border: 1px solid #e2e8f0;
       border-radius: 22px;
       padding: 24px;
+      box-shadow: 0 14px 40px rgba(15, 23, 42, 0.04);
     }
 
     .icon {
@@ -176,6 +197,7 @@
       color: white;
       border-radius: 28px;
       padding: 30px;
+      box-shadow: 0 24px 80px rgba(15, 23, 42, 0.18);
     }
 
     .pill {
@@ -187,31 +209,100 @@
       font-size: 14px;
     }
 
-    form {
-      max-width: 640px;
-      margin-top: 28px;
+    .contact-form {
+      max-width: 700px;
+      margin-top: 32px;
+      background: #ffffff;
+      padding: 34px;
+      border-radius: 26px;
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+      border: 1px solid #e2e8f0;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: #0f172a;
+      font-size: 14px;
     }
 
     input, textarea {
       width: 100%;
       padding: 15px;
-      margin-bottom: 14px;
-      border-radius: 12px;
+      border-radius: 14px;
       border: 1px solid #cbd5e1;
       font-size: 15px;
       font-family: inherit;
+      background: #f8fafc;
+      color: #0f172a;
     }
 
-    textarea { min-height: 140px; }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #2563eb;
+      background: #ffffff;
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+    }
 
-    button {
+    textarea {
+      min-height: 145px;
+      resize: vertical;
+    }
+
+    .form-button {
       background: #2563eb;
       color: white;
       border: 0;
-      padding: 14px 22px;
+      padding: 14px 24px;
       border-radius: 999px;
-      font-weight: 800;
+      font-weight: 900;
       cursor: pointer;
+      font-size: 15px;
+      font-family: inherit;
+      min-width: 150px;
+    }
+
+    .form-button:hover { background: #1d4ed8; }
+
+    .form-button:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+
+    .form-status {
+      display: none;
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: 16px;
+      font-weight: 700;
+    }
+
+    .form-status.success {
+      display: block;
+      color: #166534;
+      background: #dcfce7;
+      border: 1px solid #bbf7d0;
+    }
+
+    .form-status.error {
+      display: block;
+      color: #991b1b;
+      background: #fee2e2;
+      border: 1px solid #fecaca;
+    }
+
+    .honeypot {
+      position: absolute;
+      left: -9999px;
+      opacity: 0;
+      height: 0;
+      width: 0;
+      pointer-events: none;
     }
 
     footer {
@@ -222,14 +313,26 @@
     }
 
     @media (max-width: 850px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .logo img { height: 140px; }
+
       .hero, .split { grid-template-columns: 1fr; }
       .cards { grid-template-columns: 1fr 1fr; }
-      h1 { font-size: 40px; }
+      h1 { font-size: 42px; }
     }
 
     @media (max-width: 560px) {
-      .cards, .metrics { grid-template-columns: 1fr; }
+      .logo img { height: 112px; }
       nav { display: none; }
+      .cards, .metrics { grid-template-columns: 1fr; }
+      .contact-form { padding: 24px; }
+      h1 { font-size: 38px; }
+      h2 { font-size: 30px; }
     }
   </style>
 </head>
@@ -237,10 +340,11 @@
 <body>
   <div class="container">
     <header>
-      <a class="logo" href="#">
+      <a class="logo" href="#" aria-label="AI4M Labs home">
         <img src="ai4m.png" alt="AI4M Labs logo">
       </a>
-      <nav>
+
+      <nav aria-label="Main navigation">
         <a href="#arif">ARIF</a>
         <a href="#method">Method</a>
         <a href="#contact">Contact</a>
@@ -264,7 +368,7 @@
             Illustrative view of how AI associates a brand with themes, competitors, places and consumer intents.
           </p>
 
-          <div class="node-map"></div>
+          <div class="node-map" aria-label="Illustrative relationship map"></div>
 
           <div class="metrics">
             <div class="metric"><strong>1,500+</strong><span>strategic prompts</span></div>
@@ -322,7 +426,7 @@
             <div class="eyebrow">Method</div>
             <h2>From prompts to relationship intelligence.</h2>
             <p class="lead">
-              ARIF uses structured prompt sets, LLM answer analysis, semantic clustering and competitor benchmarking to reveal how AI systems construct meaning around your brand.
+              ARIF uses structured prompt sets, LLM answer analysis, semantic clustering, embeddings and competitor benchmarking to reveal how AI systems construct meaning around your brand.
             </p>
           </div>
 
@@ -385,11 +489,37 @@
           Interested in understanding how AI sees your brand, destination or market? Send us a note.
         </p>
 
-        <form action="https://formspree.io/f/xnjywdjp" method="POST">
-          <input type="text" name="name" placeholder="Your name" required>
-          <input type="email" name="email" placeholder="Your email" required>
-          <textarea name="message" placeholder="Tell us about your organization, market or use case" required></textarea>
-          <button type="submit">Send message</button>
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/xnjywdjp"
+          method="POST"
+          id="contact-form"
+        >
+          <input class="honeypot" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" type="text" name="name" placeholder="Your name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" placeholder="you@company.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="company">Company / organization</label>
+            <input id="company" type="text" name="company" placeholder="Company, destination or institution">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us about your organization, market or use case" required></textarea>
+          </div>
+
+          <button class="form-button" type="submit">Send message</button>
+
+          <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
         </form>
       </section>
     </main>
@@ -398,5 +528,53 @@
       © 2026 AI4M Labs. ARIF — AI Relationship Intelligence Framework.
     </footer>
   </div>
+
+  <script>
+    const form = document.getElementById("contact-form");
+    const statusBox = document.getElementById("form-status");
+    const submitButton = form.querySelector("button[type='submit']");
+
+    form.addEventListener("submit", async function(event) {
+      event.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const originalButtonText = submitButton.textContent;
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending...";
+      statusBox.className = "form-status";
+      statusBox.textContent = "";
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: formData,
+          headers: {
+            "Accept": "application/json"
+          }
+        });
+
+        if (response.ok) {
+          form.reset();
+          statusBox.className = "form-status success";
+          statusBox.textContent = "Thank you — your message has been received by AI4M Labs. We will get back to you shortly.";
+        } else {
+          statusBox.className = "form-status error";
+          statusBox.textContent = "Something went wrong. Please try again, or contact AI4M Labs directly by email.";
+        }
+      } catch (error) {
+        statusBox.className = "form-status error";
+        statusBox.textContent = "Network error. Please check your connection and try again.";
+      }
+
+      submitButton.disabled = false;
+      submitButton.textContent = originalButtonText;
+    });
+  </script>
 </body>
 </html>
